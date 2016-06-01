@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="clientApp">
+<head>
+    <title>{{2+3}}</title>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script type="text/javascript" src="chatClient.js"></script>
+</head>
+
+<body ng-controller="chatController as ctrl">
+
+<p>Chat Window</p>
+<input type="text" ng-model="ctrl.message"/>
+<br>
+<button ng-click="ctrl.sendMessage()">Send</button>
+<ul ng-repeat="message in ctrl.messages">
+    <li>{{message.atTime + " --- " + message.fromUser + " says: " +message.msg}}</li>
+</ul>
+
+<div>
+    <p>Users Online</p>
+    <ul ng-repeat="user in ctrl.userList">
+        <li>{{user}}</li>
+    </ul>
+</div>
+
+<div>
+    <p>Set Your Name</p>
+    <input type="text" ng-model="ctrl.newname"/>
+    <br>
+    <button ng-click="ctrl.setUsername(ctrl.newname)">Set Name</button>
+</div>
+
+
+
+
+</body>
+</html>

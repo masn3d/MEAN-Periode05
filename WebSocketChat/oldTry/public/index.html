@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEAN Chat App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="appClient.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+
+<div ng-controller="chatController as ctrl">
+
+
+    <div>
+        <h1>MEAN Chat Window</h1>
+        <ul>
+            <li ng-repeat="message in main.messages">
+                <p>{{message.body}}</p>
+            </li>
+        </ul>
+    </div>
+
+
+
+</div>
+
+</body>
+
+
+</html>
